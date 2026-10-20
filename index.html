@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SERPENZA — Wear Your Power | Men's Snake Chain Necklaces</title>
-<meta name="description" content="SERPENZA — premium men's snake-chain necklaces. Dark, bold, street-luxury jewelry in tarnish-resistant stainless steel. Wear your power.">
+<meta name="description" content="SERPENZA — premium men's snake necklaces. Dark, bold, street-luxury jewelry: bendable mesh with a printed python-scale pattern. Wear your power.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,11 +38,12 @@
   @media(max-width:720px){.nav-links{display:none}}
 
   /* hero */
-  .hero{position:relative;min-height:92vh;display:flex;align-items:center;background:url('images/hero.jpg') center/cover no-repeat;overflow:hidden}
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;background:url('chain-python.webp') center/cover no-repeat;overflow:hidden}
   .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
   .hero::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.55) 45%,rgba(10,10,10,.15) 100%)}
   .hero-content{position:relative;z-index:2;max-width:640px}
   .hero-eyebrow{color:var(--gold);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:18px}
+  .hero-hook{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;color:var(--gold-soft);font-size:clamp(20px,2.6vw,30px);margin-bottom:16px}
   .hero h1{font-size:clamp(48px,7vw,88px);line-height:1.02;margin-bottom:20px}
   .hero h1 em{color:var(--gold);font-style:normal}
   .hero p{color:var(--muted);font-size:17px;max-width:460px;margin-bottom:34px}
@@ -78,12 +79,9 @@
   .p-desc{color:var(--muted);margin:18px 0 28px;font-size:15.5px}
   .opt-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
   .opt-label b{color:var(--text)}
-  .swatches{display:flex;gap:12px;margin-bottom:28px}
-  .swatch{width:52px;height:52px;border-radius:50%;border:2px solid var(--line);cursor:pointer;transition:.2s;position:relative}
-  .swatch.active{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.25)}
-  .swatch.silver{background:linear-gradient(135deg,#e8e8e8,#9a9a9a)}
-  .swatch.gold{background:linear-gradient(135deg,#f3d27a,#a07c1f)}
-  .swatch.black{background:linear-gradient(135deg,#3a3a3a,#0d0d0d)}
+  .pattern-opt{display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:var(--bg2);padding:8px 18px 8px 8px;cursor:pointer;transition:.2s;color:var(--text);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;font-family:'Inter',sans-serif}
+  .pattern-opt img{width:44px;height:44px;object-fit:cover}
+  .pattern-opt.active{border-color:var(--gold);box-shadow:0 0 0 2px rgba(201,162,39,.3)}
   .buy-row{display:flex;gap:12px;margin-bottom:22px}
   .qty{display:flex;align-items:center;border:1px solid var(--line)}
   .qty button{background:none;border:none;color:var(--text);font-size:20px;width:48px;height:100%;cursor:pointer}
@@ -165,6 +163,19 @@
   .ship-note{color:var(--muted);font-size:12px;margin-bottom:16px}
   .drawer-foot .btn{width:100%;text-align:center}
 
+  /* bundle upsell */
+  .bundle-box{border:1px dashed rgba(201,162,39,.45);background:rgba(201,162,39,.06);padding:16px;margin-top:6px}
+  .bundle-title{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px;text-align:center}
+  .bundle-opt{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:12px 14px;cursor:pointer;margin-bottom:10px;font-family:inherit;transition:.2s}
+  .bundle-opt:last-of-type{margin-bottom:0}
+  .bundle-opt:hover{border-color:var(--gold)}
+  .b-name{font-weight:700;font-size:14px;letter-spacing:.06em;white-space:nowrap}
+  .b-price{font-size:13px;color:var(--muted);white-space:nowrap}
+  .b-price strong{color:var(--text);font-size:15px}
+  .b-price s{margin-left:6px}
+  .b-save{background:rgba(201,162,39,.14);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.1em;padding:4px 10px;border-radius:20px;white-space:nowrap}
+  .bundle-note{font-size:11px;color:var(--muted);text-align:center;margin-top:10px}
+
   /* modal */
   .modal{position:fixed;inset:0;z-index:110;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:.3s}
   .modal.open{opacity:1;pointer-events:auto}
@@ -200,13 +211,14 @@
 
 <!-- HERO -->
 <header class="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="images/hero.jpg">
-    <source src="videos/hero.mp4" type="video/mp4">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="chain-python.webp">
+    <source src="hero.mp4" type="video/mp4">
   </video>
   <div class="wrap hero-content">
     <div class="hero-eyebrow">Men's luxury street jewelry</div>
+    <div class="hero-hook">"Wait… is that a real snake?"</div>
     <h1>WEAR YOUR <em>POWER.</em></h1>
-    <p>The Serpent Chain — liquid-metal links, a dark unapologetic finish, and presence you don't have to explain.</p>
+    <p>The Serpent Chain — a bendable mesh serpent in vivid scale print. Shape it your way, wear it everywhere.</p>
     <div class="hero-cta">
       <a href="#shop" class="btn">Shop the chain</a>
       <a href="#why" class="btn btn-ghost">Our story</a>
@@ -216,19 +228,15 @@
 
 <!-- MARQUEE -->
 <div class="marquee">
-  <span><i>◆</i> Tarnish-resistant</span><span><i>◆</i> Sweat &amp; water resistant</span><span><i>◆</i> Hypoallergenic</span><span><i>◆</i> Adjustable 50–60 cm</span><span><i>◆</i> Free worldwide shipping</span><span><i>◆</i> 30-day guarantee</span>
+  <span><i>◆</i> Bendable mesh</span><span><i>◆</i> Printed scale pattern</span><span><i>◆</i> One size fits all</span><span><i>◆</i> Hand-shaped fit</span><span><i>◆</i> Free worldwide shipping</span><span><i>◆</i> 30-day guarantee</span>
 </div>
 
 <!-- PRODUCT -->
 <section class="product" id="shop">
   <div class="wrap product-grid">
     <div class="p-gallery reveal">
-      <div class="p-main"><img id="mainImg" src="images/chain-silver.jpg" alt="The Serpent Chain — Silver"></div>
-      <div class="p-thumbs">
-        <button class="active" data-variant="silver" data-img="images/chain-silver.jpg"><img src="images/chain-silver.jpg" alt="Silver"></button>
-        <button data-variant="gold" data-img="images/chain-gold.jpg"><img src="images/chain-gold.jpg" alt="Gold"></button>
-        <button data-variant="black" data-img="images/chain-black.jpg"><img src="images/chain-black.jpg" alt="Black"></button>
-      </div>
+      <div class="p-main"><img id="mainImg" src="chain-python.webp" alt="The Serpent Chain — Python"></div>
+      <div class="p-thumbs" id="thumbs"></div>
     </div>
     <div class="reveal">
       <div class="p-eyebrow">The signature piece</div>
@@ -238,13 +246,12 @@
         <span class="was">$49.99</span>
         <span class="save">SAVE 40%</span>
       </div>
-      <p class="p-desc">Fluid like liquid metal. Tough enough for every day. The Serpent Chain drapes like it was poured, not assembled — a single uninterrupted line of polished links that catches light with every move. No pendants needed. No noise. Just presence.</p>
+      <p class="p-desc">Not a chain — a serpent. The Serpent Chain is a bendable mesh necklace wrapped in a vivid scale print, shaped by hand to sit exactly how you want it. Coiled tight as a choker or left loose down the chest, it moves with you and turns heads without saying a word.</p>
 
-      <div class="opt-label">Finish — <b id="variantName">Silver</b></div>
+      <div class="opt-label">Pattern — <b id="variantName">Python</b></div>
       <div class="swatches">
-        <button class="swatch silver active" data-variant="silver" aria-label="Silver"></button>
-        <button class="swatch gold" data-variant="gold" aria-label="Gold"></button>
-        <button class="swatch black" data-variant="black" aria-label="Black"></button>
+        <button class="pattern-opt active" data-pattern="python"><img src="chain-python.webp" alt="Python">Python</button>
+        <button class="pattern-opt" data-pattern="graffiti"><img src="chain-graffiti-1.jpg" alt="Graffiti">Graffiti</button>
       </div>
 
       <div class="buy-row">
@@ -264,11 +271,11 @@
         <div class="acc-item">
           <button class="acc-head">Details &amp; specs <span>+</span></button>
           <div class="acc-body"><ul>
-            <li>Premium stainless steel — polished, tarnish-resistant finish</li>
-            <li>Adjustable length: 50–60 cm, fits every neckline</li>
-            <li>Hypoallergenic &amp; nickel-safe for sensitive skin</li>
-            <li>Water &amp; sweat resistant — gym, shower, every day</li>
-            <li>Secure box clasp, 6 mm link width</li>
+            <li>Bendable wire-mesh body — shape it by hand, it holds the pose</li>
+            <li>Printed scale pattern, in Python or Graffiti finishes</li>
+            <li>One size — coil it as a choker or wear it long, your call</li>
+            <li>Lightweight and comfortable for all-day wear</li>
+            <li>Wipe clean with a dry cloth; avoid prolonged water exposure to keep the print vivid</li>
           </ul></div>
         </div>
         <div class="acc-item">
@@ -277,7 +284,7 @@
         </div>
         <div class="acc-item">
           <button class="acc-head">How to style it <span>+</span></button>
-          <div class="acc-body"><p>Wear it solo over a black tee for the full street-luxury look, or layer it with a thinner chain. Silver for sharp minimalism, gold for statement nights, black for when you want the room to lean in.</p></div>
+          <div class="acc-body"><p>Coil it tight as a choker over a black tee, let it drape loose over an open shirt, or twist it into a serpent curl down the chest. Python for the wild look, Graffiti for the street edge.</p></div>
         </div>
       </div>
     </div>
@@ -293,10 +300,10 @@
       <p>Most chains are assembled. Ours flows — engineered links that move like liquid and survive real life.</p>
     </div>
     <div class="feat-grid">
-      <div class="feat reveal"><div class="icon">🐍</div><h3>Liquid-metal design</h3><p>Seamless interlocking links with zero gaps — it glides over skin, never pinches, never tangles.</p></div>
-      <div class="feat reveal"><div class="icon">💧</div><h3>Made for every day</h3><p>Sweat, water, workouts. Tarnish-resistant steel that keeps its finish through your actual life.</p></div>
-      <div class="feat reveal"><div class="icon">🛡️</div><h3>Skin-safe</h3><p>Hypoallergenic and nickel-safe. Wear it 24/7 without irritation or green marks.</p></div>
-      <div class="feat reveal"><div class="icon">📏</div><h3>Your fit, always</h3><p>Adjustable 50–60 cm with a secure box clasp — choker-tight or loose drape, your call.</p></div>
+      <div class="feat reveal"><div class="icon">🐍</div><h3>Bendable by design</h3><p>A flexible wire-mesh core you shape with your hands — it holds every pose, from tight choker to loose drape.</p></div>
+      <div class="feat reveal"><div class="icon">🎨</div><h3>Printed scale pattern</h3><p>A vivid scale print wrapped around the full length — no two angles catch the light the same way.</p></div>
+      <div class="feat reveal"><div class="icon">🪶</div><h3>Feather-light</h3><p>All presence, no weight. Comfortable from morning to midnight, even on bare skin.</p></div>
+      <div class="feat reveal"><div class="icon">📏</div><h3>One size, your fit</h3><p>No clasps, no sizing charts — coil it, twist it, drape it. It fits everybody because you shape it.</p></div>
     </div>
   </div>
 </section>
@@ -322,12 +329,12 @@
     </div>
     <div class="accordion reveal">
       <div class="acc-item">
-        <button class="acc-head">Will it fade or turn my skin green? <span>+</span></button>
-        <div class="acc-body"><p>No. The Serpent Chain is stainless steel with a tarnish-resistant finish — no green skin, no fading under normal wear. Rinse after heavy sweat or salt water and it stays sharp.</p></div>
+        <button class="acc-head">Will the print fade? <span>+</span></button>
+        <div class="acc-body"><p>Under normal wear the print stays vivid. Keep it dry when you can and wipe it with a soft cloth after wearing — like any printed piece, prolonged water or heavy friction will wear it faster.</p></div>
       </div>
       <div class="acc-item">
-        <button class="acc-head">What length should I choose? <span>+</span></button>
-        <div class="acc-body"><p>Every chain adjusts from 50 to 60 cm. 50 cm sits at the collarbone, 60 cm drapes lower on the chest. One chain covers both — adjust it to your fit.</p></div>
+        <button class="acc-head">What size is it? <span>+</span></button>
+        <div class="acc-body"><p>One size. The mesh bends to whatever you want — a snug choker, a loose coil, or a long drape down the chest. Shape it once and it holds.</p></div>
       </div>
       <div class="acc-item">
         <button class="acc-head">How long does shipping take? <span>+</span></button>
@@ -400,31 +407,50 @@
 (function(){
   "use strict";
   var PRICE = 29.99;
-  var VARIANTS = {
-    silver:{name:"Silver", img:"images/chain-silver.jpg"},
-    gold:{name:"Gold", img:"images/chain-gold.jpg"},
-    black:{name:"Black", img:"images/chain-black.jpg"}
+  var BUNDLES = {
+    2:{qty:2, linePrice:42.99, was:99.98, off:57},
+    3:{qty:3, linePrice:52.49, was:149.97, off:65}
   };
-  var state = { variant:"silver", qty:1 };
+  var PATTERNS = {
+    python:{name:"Python", imgs:["chain-python.webp"]},
+    graffiti:{name:"Graffiti", imgs:["chain-graffiti-1.jpg","chain-graffiti-2.jpg","chain-graffiti-3.jpg"]}
+  };
+  var state = { pattern:"python", imgIndex:0, qty:1 };
   var cart = [];
   try{ cart = JSON.parse(localStorage.getItem("serpenza_cart")||"[]"); }catch(e){ cart=[]; }
+  cart = cart.filter(function(i){ return i && i.pattern && PATTERNS[i.pattern]; });
 
   var $ = function(id){ return document.getElementById(id); };
   var money = function(n){ return "$"+n.toFixed(2); };
 
   /* ---------- variant selection ---------- */
-  var mainImg=$("mainImg"), variantName=$("variantName"), addBtn=$("addToCart");
-  function setVariant(v){
-    state.variant=v;
-    mainImg.style.opacity=0;
-    setTimeout(function(){ mainImg.src=VARIANTS[v].img; mainImg.alt="The Serpent Chain — "+VARIANTS[v].name; mainImg.style.opacity=1; },180);
-    variantName.textContent=VARIANTS[v].name;
-    document.querySelectorAll(".swatch").forEach(function(s){ s.classList.toggle("active", s.dataset.variant===v); });
-    document.querySelectorAll(".p-thumbs button").forEach(function(b){ b.classList.toggle("active", b.dataset.variant===v); });
-    addBtn.textContent="Add to cart — "+money(PRICE*state.qty);
+  var mainImg=$("mainImg"), variantName=$("variantName"), addBtn=$("addToCart"), thumbs=$("thumbs");
+  function renderThumbs(){
+    var imgs=PATTERNS[state.pattern].imgs;
+    thumbs.innerHTML="";
+    imgs.forEach(function(src,i){
+      var b=document.createElement("button");
+      if(i===state.imgIndex)b.className="active";
+      b.innerHTML='<img src="'+src+'" alt="'+PATTERNS[state.pattern].name+" "+(i+1)+'">';
+      b.addEventListener("click",function(){ setImage(i); });
+      thumbs.appendChild(b);
+    });
   }
-  document.querySelectorAll(".swatch, .p-thumbs button").forEach(function(el){
-    el.addEventListener("click", function(){ setVariant(el.dataset.variant); });
+  function setImage(i){
+    state.imgIndex=i;
+    var src=PATTERNS[state.pattern].imgs[i];
+    mainImg.style.opacity=0;
+    setTimeout(function(){ mainImg.src=src; mainImg.alt="The Serpent Chain — "+PATTERNS[state.pattern].name; mainImg.style.opacity=1; },180);
+    thumbs.querySelectorAll("button").forEach(function(b,j){ b.classList.toggle("active", j===i); });
+  }
+  function setPattern(p){
+    state.pattern=p; state.imgIndex=0;
+    variantName.textContent=PATTERNS[p].name;
+    document.querySelectorAll(".pattern-opt").forEach(function(s){ s.classList.toggle("active", s.dataset.pattern===p); });
+    renderThumbs(); setImage(0);
+  }
+  document.querySelectorAll(".pattern-opt").forEach(function(el){
+    el.addEventListener("click", function(){ setPattern(el.dataset.pattern); });
   });
 
   /* ---------- quantity ---------- */
@@ -434,7 +460,7 @@
   /* ---------- cart ---------- */
   function save(){ try{ localStorage.setItem("serpenza_cart", JSON.stringify(cart)); }catch(e){} }
   function count(){ return cart.reduce(function(a,i){return a+i.qty;},0); }
-  function total(){ return cart.reduce(function(a,i){return a+i.qty*PRICE;},0); }
+  function total(){ return cart.reduce(function(a,i){return a+(i.linePrice?i.linePrice:i.qty*PRICE);},0); }
 
   function render(){
     var box=$("cartItems"); box.innerHTML="";
@@ -442,22 +468,53 @@
       box.innerHTML='<div class="cart-empty">Your cart is empty.<br>The serpent awaits. 🐍</div>';
     } else {
       cart.forEach(function(item,idx){
-        var v=VARIANTS[item.variant];
+        var p=PATTERNS[item.pattern];
+        var isBundle=!!item.linePrice;
         var d=document.createElement("div"); d.className="c-item";
+        var qtyCtl = isBundle
+          ? '<span style="font-size:13px;font-weight:600">×'+item.qty+' pack</span>'
+          : '<div class="c-qty"><button data-a="dec">−</button><span>'+item.qty+'</span><button data-a="inc">+</button></div>';
         d.innerHTML =
-          '<img src="'+v.img+'" alt="The Serpent Chain — '+v.name+'">'+
-          '<div><h4>The Serpent Chain</h4><div class="variant">'+v.name+'</div>'+
-          '<div class="c-row"><div class="c-qty"><button data-a="dec">−</button><span>'+item.qty+'</span><button data-a="inc">+</button></div>'+
-          '<div class="c-price">'+money(item.qty*PRICE)+'</div></div>'+
+          '<img src="'+p.imgs[0]+'" alt="The Serpent Chain — '+p.name+'">'+
+          '<div><h4>'+(isBundle?"The Serpent Chain — "+item.qty+"-Pack":"The Serpent Chain")+'</h4>'+
+          '<div class="variant">'+p.name+'</div>'+
+          '<div class="c-row">'+qtyCtl+
+          '<div class="c-price">'+money(isBundle?item.linePrice:item.qty*PRICE)+'</div></div>'+
           '<button class="c-remove">Remove</button></div>';
-        d.querySelector('[data-a="dec"]').addEventListener("click",function(){ item.qty>1?item.qty--:cart.splice(idx,1); save(); render(); });
-        d.querySelector('[data-a="inc"]').addEventListener("click",function(){ if(item.qty<9)item.qty++; save(); render(); });
+        if(!isBundle){
+          d.querySelector('[data-a="dec"]').addEventListener("click",function(){ item.qty>1?item.qty--:cart.splice(idx,1); save(); render(); });
+          d.querySelector('[data-a="inc"]').addEventListener("click",function(){ if(item.qty<9)item.qty++; save(); render(); });
+        }
         d.querySelector(".c-remove").addEventListener("click",function(){ cart.splice(idx,1); save(); render(); });
         box.appendChild(d);
       });
+      /* bundle upsell, same playbook as the competitor: 2-pack 57% off, 3-pack 65% off compare-at */
+      var bb=document.createElement("div"); bb.className="bundle-box";
+      var bh='<div class="bundle-title">🐍 Bundle &amp; save</div>';
+      [2,3].forEach(function(n){
+        var b=BUNDLES[n];
+        bh+='<button class="bundle-opt" data-bundle="'+n+'">'+
+          '<span class="b-name">'+n+'-Pack</span>'+
+          '<span class="b-price"><strong>'+money(b.linePrice)+'</strong> <s>'+money(b.was)+'</s></span>'+
+          '<span class="b-save">SAVE '+b.off+'%</span></button>';
+      });
+      bh+='<div class="bundle-note">Bundle adds in your selected pattern ('+PATTERNS[state.pattern].name+')</div>';
+      bb.innerHTML=bh;
+      bb.querySelectorAll(".bundle-opt").forEach(function(btn){
+        btn.addEventListener("click",function(){ addBundle(parseInt(btn.dataset.bundle,10)); });
+      });
+      box.appendChild(bb);
     }
     $("cartCount").textContent=count();
     $("subtotal").textContent=money(total());
+  }
+
+  function addBundle(n){
+    var b=BUNDLES[n];
+    cart.push({pattern:state.pattern, qty:b.qty, linePrice:b.linePrice});
+    save(); render();
+    showToast(n+"-Pack bundle added ✓ — "+PATTERNS[state.pattern].name);
+    openDrawer();
   }
 
   var toast=$("toast"), toastT;
@@ -467,10 +524,10 @@
   }
 
   addBtn.addEventListener("click", function(){
-    var found=cart.find(function(i){return i.variant===state.variant;});
-    if(found){ found.qty=Math.min(9,found.qty+state.qty); } else { cart.push({variant:state.variant, qty:state.qty}); }
+    var found=cart.find(function(i){return i.pattern===state.pattern;});
+    if(found){ found.qty=Math.min(9,found.qty+state.qty); } else { cart.push({pattern:state.pattern, qty:state.qty}); }
     save(); render();
-    showToast("Added to cart ✓ — "+VARIANTS[state.variant].name);
+    showToast("Added to cart ✓ — "+PATTERNS[state.pattern].name);
     openDrawer();
   });
 
@@ -508,7 +565,7 @@
   },{threshold:.12});
   document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
 
-  render();
+  renderThumbs(); render();
 })();
 </script>
 </body>
