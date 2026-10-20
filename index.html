@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SERPENZA — Wear Your Power | Men's Snake Chain Necklaces</title>
+<meta name="description" content="SERPENZA — premium men's snake-chain necklaces. Dark, bold, street-luxury jewelry in tarnish-resistant stainless steel. Wear your power.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A0A; --bg2:#111111; --bg3:#161616;
+    --gold:#C9A227; --gold-soft:#e3c766;
+    --text:#f4f1ea; --muted:#a8a29a; --line:#262626;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.02em}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* announcement */
+  .announce{background:var(--gold);color:#0A0A0A;text-align:center;font-size:12px;font-weight:700;letter-spacing:.18em;padding:10px 16px;text-transform:uppercase}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;letter-spacing:.28em}
+  .logo span{color:var(--gold)}
+  .nav-links{display:flex;gap:32px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .nav-links a:hover{color:var(--gold)}
+  .cart-btn{background:none;border:1px solid var(--line);color:var(--text);padding:10px 18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;display:flex;gap:10px;align-items:center;transition:.25s}
+  .cart-btn:hover{border-color:var(--gold);color:var(--gold)}
+  .cart-count{background:var(--gold);color:#0A0A0A;font-weight:700;font-size:11px;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  @media(max-width:720px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;background:url('images/hero.jpg') center/cover no-repeat;overflow:hidden}
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.55) 45%,rgba(10,10,10,.15) 100%)}
+  .hero-content{position:relative;z-index:2;max-width:640px}
+  .hero-eyebrow{color:var(--gold);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:18px}
+  .hero h1{font-size:clamp(48px,7vw,88px);line-height:1.02;margin-bottom:20px}
+  .hero h1 em{color:var(--gold);font-style:normal}
+  .hero p{color:var(--muted);font-size:17px;max-width:460px;margin-bottom:34px}
+  .btn{display:inline-block;background:var(--gold);color:#0A0A0A;font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:17px 42px;cursor:pointer;border:none;transition:.25s}
+  .btn:hover{background:var(--gold-soft);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:transparent;transform:none}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* marquee */
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:16px 0;background:var(--bg2)}
+  .marquee span{display:inline-block;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);padding:0 28px}
+  .marquee span i{color:var(--gold);font-style:normal;padding-right:28px}
+
+  /* product */
+  .product{padding:110px 0}
+  .product-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+  @media(max-width:900px){.product-grid{grid-template-columns:1fr;gap:40px}}
+  .p-gallery{position:sticky;top:100px}
+  @media(max-width:900px){.p-gallery{position:static}}
+  .p-main{border:1px solid var(--line);background:var(--bg2);aspect-ratio:1;overflow:hidden}
+  .p-main img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+  .p-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+  .p-thumbs button{border:1px solid var(--line);background:var(--bg2);padding:0;cursor:pointer;aspect-ratio:1;overflow:hidden;opacity:.55;transition:.25s}
+  .p-thumbs button.active{opacity:1;border-color:var(--gold)}
+  .p-thumbs img{width:100%;height:100%;object-fit:cover}
+  .p-eyebrow{color:var(--gold);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:12px}
+  .p-title{font-size:clamp(36px,4vw,52px);line-height:1.05;margin-bottom:14px}
+  .p-price{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .p-price .now{font-size:30px;font-weight:700}
+  .p-price .was{color:var(--muted);text-decoration:line-through;font-size:18px}
+  .p-price .save{background:rgba(201,162,39,.14);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.12em;padding:5px 12px;border-radius:20px}
+  .p-desc{color:var(--muted);margin:18px 0 28px;font-size:15.5px}
+  .opt-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .opt-label b{color:var(--text)}
+  .swatches{display:flex;gap:12px;margin-bottom:28px}
+  .swatch{width:52px;height:52px;border-radius:50%;border:2px solid var(--line);cursor:pointer;transition:.2s;position:relative}
+  .swatch.active{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.25)}
+  .swatch.silver{background:linear-gradient(135deg,#e8e8e8,#9a9a9a)}
+  .swatch.gold{background:linear-gradient(135deg,#f3d27a,#a07c1f)}
+  .swatch.black{background:linear-gradient(135deg,#3a3a3a,#0d0d0d)}
+  .buy-row{display:flex;gap:12px;margin-bottom:22px}
+  .qty{display:flex;align-items:center;border:1px solid var(--line)}
+  .qty button{background:none;border:none;color:var(--text);font-size:20px;width:48px;height:100%;cursor:pointer}
+  .qty button:hover{color:var(--gold)}
+  .qty span{min-width:36px;text-align:center;font-weight:600}
+  .buy-row .btn{flex:1}
+  .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:26px 0}
+  .trust div{border:1px solid var(--line);padding:14px 10px;text-align:center;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .trust div b{display:block;color:var(--gold);font-size:18px;margin-bottom:4px}
+  .accordion{border-top:1px solid var(--line)}
+  .acc-item{border-bottom:1px solid var(--line)}
+  .acc-head{width:100%;background:none;border:none;color:var(--text);display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-size:13px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;font-weight:600}
+  .acc-head span:last-child{color:var(--gold);font-size:20px;font-weight:400}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:14.5px}
+  .acc-body p{padding:0 0 20px}
+  .acc-body ul{padding:0 0 20px 18px}
+
+  /* features */
+  .features{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:100px 0}
+  .sec-head{text-align:center;max-width:620px;margin:0 auto 60px}
+  .sec-eyebrow{color:var(--gold);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:14px}
+  .sec-head h2{font-size:clamp(34px,4.5vw,52px);line-height:1.08;margin-bottom:14px}
+  .sec-head p{color:var(--muted)}
+  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  @media(max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.feat-grid{grid-template-columns:1fr}}
+  .feat{border:1px solid var(--line);padding:36px 28px;background:var(--bg);transition:.3s}
+  .feat:hover{border-color:var(--gold);transform:translateY(-4px)}
+  .feat .icon{font-size:30px;margin-bottom:18px}
+  .feat h3{font-size:23px;margin-bottom:10px}
+  .feat p{color:var(--muted);font-size:14px}
+
+  /* guarantee */
+  .guarantee{padding:110px 0;text-align:center}
+  .guarantee h2{font-size:clamp(34px,4.5vw,54px);margin-bottom:16px}
+  .guarantee h2 em{color:var(--gold);font-style:normal}
+  .guarantee p{color:var(--muted);max-width:560px;margin:0 auto 40px}
+  .g-badges{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+  .g-badges div{border:1px solid var(--gold);color:var(--gold);padding:14px 28px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+
+  /* faq */
+  .faq{background:var(--bg2);border-top:1px solid var(--line);padding:100px 0}
+  .faq-inner{max-width:760px;margin:0 auto}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:70px 0 34px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:50px}
+  @media(max-width:720px){.foot-grid{grid-template-columns:1fr}}
+  .foot-grid h4{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .foot-grid a{display:block;color:var(--muted);font-size:14px;margin-bottom:10px}
+  .foot-grid a:hover{color:var(--gold)}
+  .foot-brand p{color:var(--muted);font-size:14px;max-width:320px;margin-top:14px}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;color:var(--muted);font-size:12px;flex-wrap:wrap;gap:10px}
+
+  /* cart drawer */
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:.3s;z-index:90}
+  .overlay.open{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:-420px;width:400px;max-width:92vw;height:100vh;background:var(--bg2);border-left:1px solid var(--line);z-index:100;transition:right .35s ease;display:flex;flex-direction:column}
+  .drawer.open{right:0}
+  .drawer-head{display:flex;justify-content:space-between;align-items:center;padding:22px;border-bottom:1px solid var(--line)}
+  .drawer-head h3{font-size:24px}
+  .drawer-close{background:none;border:none;color:var(--muted);font-size:26px;cursor:pointer}
+  .drawer-close:hover{color:var(--gold)}
+  .drawer-items{flex:1;overflow-y:auto;padding:22px;display:flex;flex-direction:column;gap:18px}
+  .cart-empty{color:var(--muted);text-align:center;margin-top:60px;font-size:14px}
+  .c-item{display:grid;grid-template-columns:84px 1fr;gap:14px;border:1px solid var(--line);padding:12px;background:var(--bg)}
+  .c-item img{width:84px;height:84px;object-fit:cover}
+  .c-item h4{font-size:16px;margin-bottom:2px}
+  .c-item .variant{color:var(--muted);font-size:12px;margin-bottom:8px}
+  .c-row{display:flex;justify-content:space-between;align-items:center}
+  .c-qty{display:flex;align-items:center;border:1px solid var(--line)}
+  .c-qty button{background:none;border:none;color:var(--text);width:30px;height:28px;cursor:pointer;font-size:15px}
+  .c-qty span{min-width:26px;text-align:center;font-size:13px;font-weight:600}
+  .c-price{font-weight:700;font-size:14px}
+  .c-remove{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline;margin-top:6px;padding:0}
+  .c-remove:hover{color:#e05c5c}
+  .drawer-foot{border-top:1px solid var(--line);padding:22px}
+  .subtotal{display:flex;justify-content:space-between;font-weight:700;font-size:17px;margin-bottom:6px}
+  .ship-note{color:var(--muted);font-size:12px;margin-bottom:16px}
+  .drawer-foot .btn{width:100%;text-align:center}
+
+  /* modal */
+  .modal{position:fixed;inset:0;z-index:110;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:.3s}
+  .modal.open{opacity:1;pointer-events:auto}
+  .modal-card{background:var(--bg2);border:1px solid var(--gold);max-width:480px;width:100%;padding:44px 38px;text-align:center;position:relative}
+  .modal-card h3{font-size:30px;margin-bottom:14px}
+  .modal-card h3 em{color:var(--gold);font-style:normal}
+  .modal-card p{color:var(--muted);font-size:14.5px;margin-bottom:26px}
+  .modal-x{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted);font-size:24px;cursor:pointer}
+
+  /* toast */
+  .toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,80px);background:var(--gold);color:#0A0A0A;font-weight:600;font-size:13px;letter-spacing:.06em;padding:15px 30px;z-index:120;transition:transform .35s ease;border-radius:4px}
+  .toast.show{transform:translate(-50%,0)}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="announce">Free worldwide shipping &nbsp;·&nbsp; 30-day guarantee &nbsp;·&nbsp; Launch offer: 40% off</div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#" class="logo">SERPENZA<span>.</span></a>
+    <div class="nav-links">
+      <a href="#shop">Shop</a>
+      <a href="#why">Why Serpenza</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <button class="cart-btn" id="openCart">Cart <span class="cart-count" id="cartCount">0</span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="images/hero.jpg">
+    <source src="videos/hero.mp4" type="video/mp4">
+  </video>
+  <div class="wrap hero-content">
+    <div class="hero-eyebrow">Men's luxury street jewelry</div>
+    <h1>WEAR YOUR <em>POWER.</em></h1>
+    <p>The Serpent Chain — liquid-metal links, a dark unapologetic finish, and presence you don't have to explain.</p>
+    <div class="hero-cta">
+      <a href="#shop" class="btn">Shop the chain</a>
+      <a href="#why" class="btn btn-ghost">Our story</a>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <span><i>◆</i> Tarnish-resistant</span><span><i>◆</i> Sweat &amp; water resistant</span><span><i>◆</i> Hypoallergenic</span><span><i>◆</i> Adjustable 50–60 cm</span><span><i>◆</i> Free worldwide shipping</span><span><i>◆</i> 30-day guarantee</span>
+</div>
+
+<!-- PRODUCT -->
+<section class="product" id="shop">
+  <div class="wrap product-grid">
+    <div class="p-gallery reveal">
+      <div class="p-main"><img id="mainImg" src="images/chain-silver.jpg" alt="The Serpent Chain — Silver"></div>
+      <div class="p-thumbs">
+        <button class="active" data-variant="silver" data-img="images/chain-silver.jpg"><img src="images/chain-silver.jpg" alt="Silver"></button>
+        <button data-variant="gold" data-img="images/chain-gold.jpg"><img src="images/chain-gold.jpg" alt="Gold"></button>
+        <button data-variant="black" data-img="images/chain-black.jpg"><img src="images/chain-black.jpg" alt="Black"></button>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="p-eyebrow">The signature piece</div>
+      <h2 class="p-title">The Serpent Chain</h2>
+      <div class="p-price">
+        <span class="now">$29.99</span>
+        <span class="was">$49.99</span>
+        <span class="save">SAVE 40%</span>
+      </div>
+      <p class="p-desc">Fluid like liquid metal. Tough enough for every day. The Serpent Chain drapes like it was poured, not assembled — a single uninterrupted line of polished links that catches light with every move. No pendants needed. No noise. Just presence.</p>
+
+      <div class="opt-label">Finish — <b id="variantName">Silver</b></div>
+      <div class="swatches">
+        <button class="swatch silver active" data-variant="silver" aria-label="Silver"></button>
+        <button class="swatch gold" data-variant="gold" aria-label="Gold"></button>
+        <button class="swatch black" data-variant="black" aria-label="Black"></button>
+      </div>
+
+      <div class="buy-row">
+        <div class="qty">
+          <button id="qtyMinus">−</button><span id="qtyVal">1</span><button id="qtyPlus">+</button>
+        </div>
+        <button class="btn" id="addToCart">Add to cart — $29.99</button>
+      </div>
+
+      <div class="trust">
+        <div><b>◈</b>Free shipping<br>worldwide</div>
+        <div><b>◈</b>30-day<br>guarantee</div>
+        <div><b>◈</b>Secure<br>checkout</div>
+      </div>
+
+      <div class="accordion">
+        <div class="acc-item">
+          <button class="acc-head">Details &amp; specs <span>+</span></button>
+          <div class="acc-body"><ul>
+            <li>Premium stainless steel — polished, tarnish-resistant finish</li>
+            <li>Adjustable length: 50–60 cm, fits every neckline</li>
+            <li>Hypoallergenic &amp; nickel-safe for sensitive skin</li>
+            <li>Water &amp; sweat resistant — gym, shower, every day</li>
+            <li>Secure box clasp, 6 mm link width</li>
+          </ul></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Shipping &amp; returns <span>+</span></button>
+          <div class="acc-body"><p>Orders ship within 24–48 hours with tracked delivery, free worldwide (7–14 business days). Not feeling it? You have 30 days for a full refund — no questions, no hassle.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">How to style it <span>+</span></button>
+          <div class="acc-body"><p>Wear it solo over a black tee for the full street-luxury look, or layer it with a thinner chain. Silver for sharp minimalism, gold for statement nights, black for when you want the room to lean in.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Why Serpenza</div>
+      <h2>Built different.<br>Worn daily.</h2>
+      <p>Most chains are assembled. Ours flows — engineered links that move like liquid and survive real life.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal"><div class="icon">🐍</div><h3>Liquid-metal design</h3><p>Seamless interlocking links with zero gaps — it glides over skin, never pinches, never tangles.</p></div>
+      <div class="feat reveal"><div class="icon">💧</div><h3>Made for every day</h3><p>Sweat, water, workouts. Tarnish-resistant steel that keeps its finish through your actual life.</p></div>
+      <div class="feat reveal"><div class="icon">🛡️</div><h3>Skin-safe</h3><p>Hypoallergenic and nickel-safe. Wear it 24/7 without irritation or green marks.</p></div>
+      <div class="feat reveal"><div class="icon">📏</div><h3>Your fit, always</h3><p>Adjustable 50–60 cm with a secure box clasp — choker-tight or loose drape, your call.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="wrap reveal">
+    <div class="sec-eyebrow">Zero risk</div>
+    <h2>Love it in 30 days,<br>or <em>it's free.</em></h2>
+    <p>Wear it everywhere for a month. If it doesn't become the piece you reach for daily, send it back for a full refund.</p>
+    <div class="g-badges">
+      <div>30-day returns</div><div>Free shipping</div><div>Secure checkout</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-inner">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Questions</div>
+      <h2>Before you ask</h2>
+    </div>
+    <div class="accordion reveal">
+      <div class="acc-item">
+        <button class="acc-head">Will it fade or turn my skin green? <span>+</span></button>
+        <div class="acc-body"><p>No. The Serpent Chain is stainless steel with a tarnish-resistant finish — no green skin, no fading under normal wear. Rinse after heavy sweat or salt water and it stays sharp.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">What length should I choose? <span>+</span></button>
+        <div class="acc-body"><p>Every chain adjusts from 50 to 60 cm. 50 cm sits at the collarbone, 60 cm drapes lower on the chest. One chain covers both — adjust it to your fit.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">How long does shipping take? <span>+</span></button>
+        <div class="acc-body"><p>We ship within 24–48 hours, tracked and free worldwide. Delivery takes 7–14 business days depending on your country.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">Is my payment secure? <span>+</span></button>
+        <div class="acc-body"><p>Yes — checkout runs over encrypted connections with buyer protection on every order. Your details never touch our servers.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo">SERPENZA<span>.</span></a>
+        <p>Men's luxury street jewelry. Dark, bold, unapologetic — designed for men who move different.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#shop">The Serpent Chain</a>
+        <a href="#why">Why Serpenza</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="#faq">Shipping &amp; returns</a>
+        <a href="#faq">Size guide</a>
+        <a href="mailto:support@serpenza.com">Contact us</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 SERPENZA. All rights reserved.</span>
+      <span>Wear your power.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="drawer-head">
+    <h3>Your cart</h3>
+    <button class="drawer-close" id="closeCart">×</button>
+  </div>
+  <div class="drawer-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="subtotal"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+    <div class="ship-note">Shipping &amp; taxes calculated at checkout. Free worldwide shipping.</div>
+    <button class="btn" id="checkoutBtn">Checkout</button>
+  </div>
+</aside>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-card">
+    <button class="modal-x" id="modalX">×</button>
+    <h3>Almost <em>yours.</em></h3>
+    <p>This demo storefront is front-end only. Connect a payment provider (Stripe, Shopify, or PayPal) to take live orders — your cart, design and copy are already done.</p>
+    <button class="btn" id="modalOk" style="width:100%">Got it</button>
+  </div>
+</div>
+
+<div class="toast" id="toast">Added to cart ✓</div>
+
+<script>
+(function(){
+  "use strict";
+  var PRICE = 29.99;
+  var VARIANTS = {
+    silver:{name:"Silver", img:"images/chain-silver.jpg"},
+    gold:{name:"Gold", img:"images/chain-gold.jpg"},
+    black:{name:"Black", img:"images/chain-black.jpg"}
+  };
+  var state = { variant:"silver", qty:1 };
+  var cart = [];
+  try{ cart = JSON.parse(localStorage.getItem("serpenza_cart")||"[]"); }catch(e){ cart=[]; }
+
+  var $ = function(id){ return document.getElementById(id); };
+  var money = function(n){ return "$"+n.toFixed(2); };
+
+  /* ---------- variant selection ---------- */
+  var mainImg=$("mainImg"), variantName=$("variantName"), addBtn=$("addToCart");
+  function setVariant(v){
+    state.variant=v;
+    mainImg.style.opacity=0;
+    setTimeout(function(){ mainImg.src=VARIANTS[v].img; mainImg.alt="The Serpent Chain — "+VARIANTS[v].name; mainImg.style.opacity=1; },180);
+    variantName.textContent=VARIANTS[v].name;
+    document.querySelectorAll(".swatch").forEach(function(s){ s.classList.toggle("active", s.dataset.variant===v); });
+    document.querySelectorAll(".p-thumbs button").forEach(function(b){ b.classList.toggle("active", b.dataset.variant===v); });
+    addBtn.textContent="Add to cart — "+money(PRICE*state.qty);
+  }
+  document.querySelectorAll(".swatch, .p-thumbs button").forEach(function(el){
+    el.addEventListener("click", function(){ setVariant(el.dataset.variant); });
+  });
+
+  /* ---------- quantity ---------- */
+  $("qtyMinus").addEventListener("click", function(){ if(state.qty>1){state.qty--; $("qtyVal").textContent=state.qty; addBtn.textContent="Add to cart — "+money(PRICE*state.qty);} });
+  $("qtyPlus").addEventListener("click", function(){ if(state.qty<9){state.qty++; $("qtyVal").textContent=state.qty; addBtn.textContent="Add to cart — "+money(PRICE*state.qty);} });
+
+  /* ---------- cart ---------- */
+  function save(){ try{ localStorage.setItem("serpenza_cart", JSON.stringify(cart)); }catch(e){} }
+  function count(){ return cart.reduce(function(a,i){return a+i.qty;},0); }
+  function total(){ return cart.reduce(function(a,i){return a+i.qty*PRICE;},0); }
+
+  function render(){
+    var box=$("cartItems"); box.innerHTML="";
+    if(!cart.length){
+      box.innerHTML='<div class="cart-empty">Your cart is empty.<br>The serpent awaits. 🐍</div>';
+    } else {
+      cart.forEach(function(item,idx){
+        var v=VARIANTS[item.variant];
+        var d=document.createElement("div"); d.className="c-item";
+        d.innerHTML =
+          '<img src="'+v.img+'" alt="The Serpent Chain — '+v.name+'">'+
+          '<div><h4>The Serpent Chain</h4><div class="variant">'+v.name+'</div>'+
+          '<div class="c-row"><div class="c-qty"><button data-a="dec">−</button><span>'+item.qty+'</span><button data-a="inc">+</button></div>'+
+          '<div class="c-price">'+money(item.qty*PRICE)+'</div></div>'+
+          '<button class="c-remove">Remove</button></div>';
+        d.querySelector('[data-a="dec"]').addEventListener("click",function(){ item.qty>1?item.qty--:cart.splice(idx,1); save(); render(); });
+        d.querySelector('[data-a="inc"]').addEventListener("click",function(){ if(item.qty<9)item.qty++; save(); render(); });
+        d.querySelector(".c-remove").addEventListener("click",function(){ cart.splice(idx,1); save(); render(); });
+        box.appendChild(d);
+      });
+    }
+    $("cartCount").textContent=count();
+    $("subtotal").textContent=money(total());
+  }
+
+  var toast=$("toast"), toastT;
+  function showToast(msg){
+    toast.textContent=msg; toast.classList.add("show");
+    clearTimeout(toastT); toastT=setTimeout(function(){toast.classList.remove("show");},2200);
+  }
+
+  addBtn.addEventListener("click", function(){
+    var found=cart.find(function(i){return i.variant===state.variant;});
+    if(found){ found.qty=Math.min(9,found.qty+state.qty); } else { cart.push({variant:state.variant, qty:state.qty}); }
+    save(); render();
+    showToast("Added to cart ✓ — "+VARIANTS[state.variant].name);
+    openDrawer();
+  });
+
+  /* ---------- drawer ---------- */
+  var drawer=$("drawer"), overlay=$("overlay");
+  function openDrawer(){ drawer.classList.add("open"); overlay.classList.add("open"); document.body.style.overflow="hidden"; }
+  function closeDrawer(){ drawer.classList.remove("open"); overlay.classList.remove("open"); document.body.style.overflow=""; }
+  $("openCart").addEventListener("click", openDrawer);
+  $("closeCart").addEventListener("click", closeDrawer);
+  overlay.addEventListener("click", closeDrawer);
+
+  /* ---------- checkout modal ---------- */
+  var modal=$("checkoutModal");
+  $("checkoutBtn").addEventListener("click", function(){
+    if(!cart.length){ showToast("Your cart is empty"); return; }
+    closeDrawer(); modal.classList.add("open"); overlay.classList.add("open");
+  });
+  function closeModal(){ modal.classList.remove("open"); overlay.classList.remove("open"); }
+  $("modalX").addEventListener("click", closeModal);
+  $("modalOk").addEventListener("click", closeModal);
+
+  /* ---------- accordions ---------- */
+  document.querySelectorAll(".acc-head").forEach(function(h){
+    h.addEventListener("click", function(){
+      var body=h.nextElementSibling, open=body.style.maxHeight && body.style.maxHeight!=="0px";
+      document.querySelectorAll(".acc-body").forEach(function(b){ b.style.maxHeight="0px"; });
+      document.querySelectorAll(".acc-head span:last-child").forEach(function(s){ s.textContent="+"; });
+      if(!open){ body.style.maxHeight=body.scrollHeight+"px"; h.querySelector("span:last-child").textContent="−"; }
+    });
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+  render();
+})();
+</script>
+</body>
+</html>
